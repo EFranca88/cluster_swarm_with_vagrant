@@ -44,8 +44,8 @@ if [ "$current_server_name" == "$server_name" ]; then
     fi
 
 
-    # Função que cria o volume Docker após 5 minutos
-    criar_volume() {
+    # Função que cria o Serviço Docker 'meu-app' após 5 minutos
+    service_create() {
     # Aguardar 5 minutos (1m=60 seg, 2m=120 seg, 3m=180 seg, 4m=240 seg, 5m=300 seg)
     sleep 300
     # Criar o serviço
@@ -59,7 +59,7 @@ if [ "$current_server_name" == "$server_name" ]; then
     }
 
     # Executa a função em segundo plano
-    criar_volume &
+    service_create &
 
     # Mensagem para indicar que o script principal terminou
     echo "O comando para criar o volume Docker será executado em segundo plano após 5 minutos."
